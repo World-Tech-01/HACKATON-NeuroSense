@@ -31,10 +31,14 @@ Sistema de alertas y notificaciones
 Backend	Python 3, Flask, SQLAlchemy (para futuras implementaciones de base de datos)
 Frontend	HTML5, CSS3, JavaScript, Chart.js (para visualización de datos)
 Herramientas	Git, Pip, Virtualenv, Flask Development Server
+
 🛠️ Instalación y Configuración
 Sigue estos pasos para configurar el proyecto en tu entorno local:
 
 Clonar el repositorio
+
+git clone https://github.com/tu-usuario/neurociencia-frontend.git
+cd neurociencia-frontend
 
 bash
 git clone https://github.com/tu-usuario/neurociencia-frontend.git
@@ -60,35 +64,61 @@ python app.py
 Acceder a la aplicación
 Abre tu navegador en: http://localhost:5000
 
-🗃️ Estructura del Proyecto
-neurociencia-frontend/
+🗃️ Estructura del Proyectoneurociencia-frontend/
 ├── app.py                  # Punto de entrada principal de la aplicación
+
 ├── config.py               # Configuraciones (claves secretas, etc.)
+
 ├── requirements.txt        # Dependencias del proyecto
+
 │
+
 ├── static/                 # Archivos estáticos
+
 │   ├── css/                # Hojas de estilo
+
 │   ├── js/                 # Scripts JavaScript
+
 │   └── images/             # Imágenes y assets visuales
+
 │
+
 └── templates/              # Plantillas HTML
+
     ├── base.html           # Plantilla base
+
     ├── login.html          # Página de inicio de sesión
+    
     ├── paciente/           # Vistas del paciente
+    
     │   ├── dashboard.html  # Panel principal
+    
     │   └── historial.html  # Historial médico
+    
     ├── especialista/       # Vistas del especialista
+    
     │   ├── panel.html      # Panel de control
+    
     │   └── pacientes.html  # Gestión de pacientes
+    
     └── componentes/        # Componentes reutilizables
+    
         └── graficos.html   # Componentes de gráficos EEG
+        
 👥 Equipo de Desarrollo
+
 Nombre	Rol	Contacto
+
 Aaron Néstor Choque Condori	Backend Developer	vantas1412@gmail.com
+
 Joel Hernan Tancara Suñagua	Frontend Developer	tancarajoe@gmail.com
+
 Fidel Angel Rojas Condori	Data Analyst	rojascondorifidelangel@gmail.com
+
 Carlos Eduardo Reyes Barja	UI/UX Designer	kaereyes0@gmail.com
+
 Esther Sara Copa Quispe	Documentation	e.sara.cq.25@gmail.com
+
 🤝 Cómo Contribuir
 ¡Agradecemos las contribuciones! Para colaborar:
 
