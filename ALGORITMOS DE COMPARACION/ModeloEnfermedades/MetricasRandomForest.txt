@@ -1,0 +1,4 @@
+     Métrica  Macro Promedio  Promedio Ponderado
+0  Precisión        0.645980            0.645176
+1     Recall        0.659125            0.657588
+2   F1-score        0.647855            0.646664
