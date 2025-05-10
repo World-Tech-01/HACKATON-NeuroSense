@@ -80,7 +80,7 @@ Abre tu navegador en: [http://localhost:5000](http://localhost:5000)
 
 ## 🗃 Estructura del Proyecto
 
-
+´´´
 neurociencia-frontend/
 ├── app.py                  # Punto de entrada principal de la aplicación
 ├── config.py               # Configuración general (claves, etc.)
@@ -100,7 +100,7 @@ neurociencia-frontend/
 │   │   └── pacientes.html
 │   └── componentes/
 │       └── graficos.html   # Componentes reutilizables (gráficos EEG)
-
+´´´
 
 ## 👥 Equipo de Desarrollo
 
