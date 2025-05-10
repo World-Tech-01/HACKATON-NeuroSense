@@ -1,0 +1,212 @@
+/* Estilos generales */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #788EF2, #2E9EEB);
+    color: #fff;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+  }
+  
+  /* Encabezado */
+  .app-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .app-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .app-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin: 0;
+  }
+  
+  /* Tarjeta de login */
+  .login-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    max-width: 450px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .login-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-header {
+    padding: 2rem 2rem 1rem;
+    text-align: center;
+  }
+  
+  .card-header h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .card-header p {
+    color: #666;
+    margin: 0;
+  }
+  
+  .card-content {
+    padding: 1rem 2rem 2rem;
+  }
+  
+  /* Formulario */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #9B87F5;
+    box-shadow: 0 0 0 3px rgba(155, 135, 245, 0.2);
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  
+  .radio-group input[type="radio"] {
+    width: auto;
+    accent-color: #9B87F5;
+  }
+  
+  /* Botón */
+  .btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #9B87F5;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+  }
+  
+  .btn:hover {
+    background-color: #8673E0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(155, 135, 245, 0.3);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Pie de tarjeta */
+  .card-footer {
+    padding: 1rem 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    color: #666;
+  }
+  
+  .link {
+    color: #9B87F5;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Sesiones recientes (como en la imagen) */
+  .recent-sessions {
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .recent-sessions h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .session-item {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+    
+    .app-header h1 {
+      font-size: 2rem;
+    }
+    
+    .app-header p {
+      font-size: 1rem;
+    }
+    
+    .login-card {
+      max-width: 100%;
+    }
+    
+    .radio-group {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }

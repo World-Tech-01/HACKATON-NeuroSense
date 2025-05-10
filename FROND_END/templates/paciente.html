@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emociones - Panel del Paciente</title>
+  <link rel="stylesheet" href="../static/css/paciente.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">
+        <h1>Emociones</h1>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item active" data-target="inicio">
+          <div class="nav-icon home-icon"></div>
+          <span>Inicio</span>
+        </li>
+        <li class="nav-item" data-target="comparaciones">
+          <div class="nav-icon chart-icon"></div>
+          <span>Evolucion Emocional
+        </li>
+        <li class="nav-item" data-target="historial">
+          <div class="nav-icon history-icon"></div>
+          <span>Historial</span>
+        </li>
+        <li class="nav-item" data-target="recomendaciones">
+          
+          <span>Recomendaciones</span>
+        </li>
+      </ul>
+      <div class="profile-section">
+        <div class="profile-avatar"></div>
+        <div class="profile-info">
+          <span class="profile-name">Juan Pérez</span>
+          <span class="profile-role">Paciente</span>
+        </div>
+        
+        <a href="{{ url_for('login') }}" class="logout-btn">
+          <span>
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+              </path>
+            </svg>
+          </span>
+          <span>Cerrar Sesión</span>
+        </a>
+
+      </div>
+    </nav>
+
+    <main class="dashboard">
+
+      <section id="inicio" class="dashboard-section active">
+        <div class="section-header">
+          <h2>Panel de Control Emocional </h2>
+          <p>Bienvenido de Juan. <br>Aquí está un resumen de tu progreso emocional.</p>
+        </div>
+        <div class="stats-summary">
+
+          <div class="stat-card">
+            <div class="stat-title">Sesiones Totales</div>
+            <div class="stat-value">24</div>
+            <div class="stat-trend positive">+3 esta semana</div>
+          </div>
+                
+          <div class="stat-card">
+            <div class="stat-title">Emoción Dominante</div>
+            <div class="emotion-badge calm">Calma</div>
+            <div class="stat-trend neutral">Consistente</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-title">Próxima Sesión</div>
+            <div class="stat-value">Mañana</div>
+            <div class="stat-trend">10:00 AM</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title">Progreso General</div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 76%"></div>
+            </div>
+            <div class="stat-trend positive">76% Completado</div>
+          </div>
+        </div>
+
+        <div class="charts-container">
+          <div class="chart-wrapper">
+            <div class="chart-header">
+              <h3>Evolución Emocional</h3>
+              <div class="period-selector">
+                <button class="period-btn active">Sesiones</button>
+              </div>
+            </div>
+            <div class="emotion-timeline-chart">
+
+              <div class="chart-placeholder emotion-chart">
+                <div class="chart-line">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chart-wrapper">
+            <div class="chart-header">
+              <h3>Distribución de tus Emociones</h3>
+              <button class="download-btn">Descargar PDF</button>
+            </div>
+            <div class="emotion-distribution">
+                <div class="emotion-item">
+                    <span class="emotion-name">Feliz</span>
+                    <div class="emotion-bar-container">
+                        <div class="emotion-bar happyprim" style="width: 38%"></div>
+                        <span class="emotion-percentage">38%</span>
+                    </div>
+                </div>
+                <div class="emotion-item">
+                    <span class="emotion-name">Triste</span>
+                    <div class="emotion-bar-container">
+                    <div class="emotion-bar sadprim" style="width: 8%"></div>
+                    <span class="emotion-percentage">8%</span>
+                    </div>
+                </div>
+                <div class="emotion-item">
+                    <span class="emotion-name">Enojado</span>
+                    <div class="emotion-bar-container">
+                    <div class="emotion-bar stressprim" style="width: 15%"></div>
+                    <span class="emotion-percentage">15%</span>
+                    </div>
+                </div>
+                <div class="emotion-item">
+                    <span class="emotion-name">Relajado</span>
+                    <div class="emotion-bar-container">
+                    <div class="emotion-bar calmprim" style="width: 44%"></div>
+                    <span class="emotion-percentage">44%</span>
+                    </div>
+                </div>
+                <div class="emotion-item">
+                    <span class="emotion-name">Anciedad</span>
+                    <div class="emotion-bar-container">
+                    <div class="emotion-bar anxiousprim" style="width: 52%"></div>
+                    <span class="emotion-percentage">62%</span>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      
+      <section id="comparaciones" class="dashboard-section active">
+        <div class="section-header">
+          <h2>Comparación y Análisis</h2>
+          <p>Analiza tu evolución emocional a lo largo del tiempo.</p>
+        </div>
+        
+        <div class="time-period-selector">
+          <button class="time-btn active">Semana</button>
+          <button class="time-btn">Mes</button>
+          <button class="time-btn">Año</button>
+          <button class="download-report-btn">
+            <span>Descargar Informe</span>
+          </button>
+        </div>
+        
+        <div class="comparison-grid">
+            <div class="chart-container">
+                <div class="evolution-chart">
+                    <h3>Evolución Según las Sesiones</h3>
+                    
+                    <div class="chart-wrapper2">
+                      <div class="y-axis">
+                        <span>100%</span>
+                        <span>75%</span>
+                        <span>50%</span>
+                        <span>25%</span>
+                        <span>0%</span>
+                      </div>
+                      
+                      <div class="chart-area">
+
+                        <div class="emotion-line happy1" data-values="38,45,60,52,68,75">
+                          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M0,62 L20,55 L40,40 L60,48 L80,32 L100,25" />
+                          </svg>
+                          <div class="data-points"></div>
+                        </div>
+                        
+                        <div class="emotion-line sad1" data-values="25,20,15,18,12,10">
+                          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M0,75 L20,80 L40,85 L60,82 L80,88 L100,90" />
+                          </svg>
+                          <div class="data-points"></div>
+                        </div>
+                        
+                        <div class="emotion-line angry1" data-values="20,18,15,16,10,8">
+                          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M0,80 L20,82 L40,85 L60,84 L80,90 L100,92" />
+                          </svg>
+                          <div class="data-points"></div>
+                        </div>
+                        
+                        <div class="emotion-line calm1" data-values="44,50,55,58,60,65">
+                          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M0,56 L20,50 L40,45 L60,42 L80,40 L100,35" />
+                          </svg>
+                          <div class="data-points"></div>
+                        </div>
+                        
+
+                        <div class="emotion-line anxious1" data-values="62,55,45,38,30,25">
+                          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M0,38 L20,45 L40,55 L60,62 L80,70 L100,75" />
+                          </svg>
+                          <div class="data-points"></div>
+                        </div>
+                      </div>
+                      
+                      <!-- Eje X -->
+                      <div class="x-axis">
+                        <span>12/03/24</span>
+                        <span>25/03/24</span>
+                        <span>12/04/24</span>
+                        <span>12/05/24</span>
+                        <span>12/06/24</span>
+                        <span>12/08/24</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Leyenda -->
+                    <div class="chart-legend">
+                      <div class="emotion-label happy1">
+                        <span class="color-box"></span>
+                        <span class="emotion-name">Felicidad (38-75%)</span>
+                      </div>
+                      <div class="emotion-label sad1">
+                        <span class="color-box"></span>
+                        <span class="emotion-name">Tristeza (25-10%)</span>
+                      </div>
+                      <div class="emotion-label angry1">
+                        <span class="color-box"></span>
+                        <span class="emotion-name">Enojo (20-8%)</span>
+                      </div>
+                      <div class="emotion-label calm1">
+                        <span class="color-box"></span>
+                        <span class="emotion-name">Relajado (44-65%)</span>
+                      </div>
+                      <div class="emotion-label anxious1">
+                        <span class="color-box"></span>
+                        <span class="emotion-name">Ansiedad (62-25%)</span>
+                      </div>
+                    </div>
+                </div>
+                
+            </div>
+          
+          <!-- Evolucion de tendencias emocionales  -->
+          <div class="chart-container">
+            <div class="tendency-chart">
+                <h3>Tendencias Emocionales</h3>
+                
+                <div class="chart-container">
+                  <!-- Gráfico de dona -->
+                  <div class="donut-chart">
+                    <div class="chart-segment happy2" style="--value:38; --start:0"></div>
+                    <div class="chart-segment sad2" style="--value:8; --start:38"></div>
+                    <div class="chart-segment angry2" style="--value:15; --start:46"></div>
+                    <div class="chart-segment calm2" style="--value:44; --start:61"></div>
+                    <div class="chart-segment anxious2" style="--value:62; --start:105"></div>
+                    <div class="chart-center">
+                      <span class="main-emotion">Ansiedad</span>
+                      <span class="percentage">62%</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Detalles -->
+                  <div class="tendency-details">
+                    <div class="emotion-detail happy2">
+                      <span class="detail-label">Felicidad</span>
+                      <span class="detail-value">38%</span>
+                      <div class="detail-bar"></div>
+                    </div>
+                    <div class="emotion-detail sad2">
+                      <span class="detail-label">Tristeza</span>
+                      <span class="detail-value">8%</span>
+                      <div class="detail-bar"></div>
+                    </div>
+                    <div class="emotion-detail angry2">
+                      <span class="detail-label">Enojo</span>
+                      <span class="detail-value">15%</span>
+                      <div class="detail-bar"></div>
+                    </div>
+                    <div class="emotion-detail calm2">
+                      <span class="detail-label">Relajado</span>
+                      <span class="detail-value">44%</span>
+                      <div class="detail-bar"></div>
+                    </div>
+                    <div class="emotion-detail anxious2">
+                      <span class="detail-label">Ansiedad</span>
+                      <span class="detail-value">62%</span>
+                      <div class="detail-bar"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div> 
+            
+
+          <!-- progreso de evolucion de emociones  -->
+          <div class="chart-card progress-card">
+            <h3>Progreso del Manejo Emocional</h3>
+            <div class="progress-metrics">
+              <div class="metric">
+                <div class="metric-label">Control de Estrés</div>
+                <div class="metric-bar-container">
+                  <div class="metric-bar" style="width: 78%"></div>
+                  <span class="metric-percentage">78%</span>
+                </div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Manejo de Ansiedad</div>
+                <div class="metric-bar-container">
+                  <div class="metric-bar" style="width: 65%"></div>
+                  <span class="metric-percentage">65%</span>
+                </div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Equilibrio Emocional</div>
+                <div class="metric-bar-container">
+                  <div class="metric-bar" style="width: 82%"></div>
+                  <span class="metric-percentage">82%</span>
+                </div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Auto-conocimiento</div>
+                <div class="metric-bar-container">
+                  <div class="metric-bar" style="width: 90%"></div>
+                  <span class="metric-percentage">90%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chart-card patterns-card">
+            <h3>Patrones Identificados</h3>
+            <div class="patterns-list">
+              <div class="pattern-item">
+                <div class="pattern-icon stress-icon"></div>
+                <div class="pattern-info">
+                  <h4>Picos de Estrés</h4>
+                  <p>Niveles elevados segun las emociones detectadas</p>
+                </div>
+              </div>
+              <div class="pattern-item">
+                <div class="pattern-icon calm-icon"></div>
+                <div class="pattern-info">
+                  <h4>Períodos de Calma</h4>
+                  <p>Consistentemente más relajado despues de las reiteradas evaluaciones</p>
+                </div>
+              </div>
+              <div class="pattern-item">
+                <div class="pattern-icon happy-icon"></div>
+                <div class="pattern-info">
+                  <h4>Mejora en Felicidad</h4>
+                  <p>Incremento del 38% a 75%  en momentos de felicidad comparado con la evaluacion anterior </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Pantalla de Historial -->
+      <section id="historial" class="dashboard-section active">
+        <div class="section-header">
+            <h1>Recomendaciones</h1>
+            <p>Revisa todas tus evaluaciones anteriores .</p>
+        </div>
+
+        <div class="sessions-filter">
+          <div class="filter-group">
+            <label for="date-filter">Filtrar por fecha:</label>
+            <select id="date-filter">
+              <option value="all">Todas las fechas</option>
+              <option value="this-month">Este mes</option>
+              <option value="last-month">Mes anterior</option>
+              <option value="last-3-months">Últimos 3 meses</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="type-filter">Tipo de Evaluacion:</label>
+            <select id="type-filter">
+              <option value="all">Todos los tipos</option>
+              <option value="meditation">Evaluacion Inicial</option>
+              <option value="therapy">Evaluacion de Seguimiento</option>
+              <option value="evaluation">Evaluación final</option>
+            </select>
+          </div>
+          <button class="search-btn">Buscar</button>
+        </div>
+        
+        <div class="sessions-list">
+          <div class="session-item">
+            <div class="session-date">
+              <span class="day">28</span>
+              <span class="month">Abr</span>
+            </div>
+            <div class="session-content">
+              <div class="session-header">
+                <h3>Evaluacion 1 - Inicial </h3>
+                <span class="session-time">10:15 - 11:00</span>
+              </div>
+              <div class="session-details">
+                <div class="session-emotions">
+                  <span class="emotion-tag calm">Calma</span>
+                  <span class="emotion-tag focus">Concentración</span>
+                </div>
+                <div class="session-duration">45 min</div>
+              </div>
+              <div class="specialist-notes">
+                <h1>Recomendaciones</h1>
+                <h4>Notas del especialista: Julio Vernabe </h4>
+                <p>Durante esta primera evaluación, se identifica un punto de partida emocional donde prevalece un estado de alerta emocional, posiblemente relacionado con inseguridad o cambios recientes en el entorno de la persona. El registro muestra bajos niveles de emociones positivas, lo que podría limitar sus recursos adaptativos iniciales. Esta fase es clave para observar cómo reacciona ante intervenciones básicas y para establecer una línea base que permita detectar futuros avances o retrocesos. No se diagnostica ansiedad, pero sí se toma nota de una tendencia que conviene seguir con atención.</p>
+                <h4>Recomendaciones</h4>
+                <p>En esta evaluación se observa una tendencia hacia la ansiedad debido a la predominancia de emociones como la preocupación, el miedo y el nerviosismo. Aunque no se puede afirmar un estado ansioso como tal, si esta tendencia continúa o se intensifica, podría derivar en un patrón emocional menos saludable. El sistema recomienda iniciar prácticas de autorregulación emocional como respiración guiada y registro emocional diario. Se sugiere también fomentar actividades que generen calma, como momentos de silencio, meditación o descanso estructurado.</p>
+            </div>
+              <div class="session-actions">
+                <button class="btn-details">Ver detalles</button>
+                <button class="btn-download">Descargar informe</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="session-item">
+            <div class="session-date">
+              <span class="day">25</span>
+              <span class="month">Abr</span>
+            </div>
+            <div class="session-content">
+              <div class="session-header">
+                <h3>Evaluacion 2 - Seguimiento </h3>
+                <span class="session-time">15:30 - 16:15</span>
+              </div>
+              <div class="session-details">
+                <div class="session-emotions">
+                  <span class="emotion-tag happy">Felicidad</span>
+                  <span class="emotion-tag anxious">Leve Ansiedad</span>
+                </div>
+                <div class="session-duration">45 min</div>
+              </div>
+              <div class="specialist-notes">
+                <h1>Recomendaciones</h1>
+                <h4>Notas del especialista: Julio Vernabe </h4>
+                <p>Se aprecia un leve pero significativo cambio positivo. Aunque aún existen emociones que podrían volverse disfuncionales si no se gestionan adecuadamente, el hecho de que empiecen a emerger emociones más agradables indica un posible proceso de adaptación y respuesta positiva a las intervenciones. El avance no es lineal ni definitivo, pero es importante reconocer esta apertura emocional como un recurso que puede sostenerse o incluso potenciarse en el futuro cercano.</p>
+                <h4>Recomendaciones</h4>
+                <p>En comparación con la evaluación anterior, se observa una disminución en la frecuencia de emociones negativas y un ligero ascenso en emociones como la felicidad y la confianza. Si esta tendencia se mantiene, el sistema proyecta una mejora gradual del estado emocional. Como recomendación, se sugiere continuar con las estrategias implementadas, incorporar actividades físicas suaves y mantener un diario de gratitud para reforzar emociones positivas.</p>
+            </div>
+              <div class="session-actions">
+                <button class="btn-details">Ver detalles</button>
+                <button class="btn-download">Descargar informe</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="session-item">
+            <div class="session-date">
+              <span class="day">20</span>
+              <span class="month">Abr</span>
+            </div>
+            <div class="session-content">
+              <div class="session-header">
+                <h3>Evaluacion 3 - Seguimiento </h3>
+                <span class="session-time">11:00 - 12:30</span>
+              </div>
+              <div class="session-details">
+                <div class="session-emotions">
+                  <span class="emotion-tag empathy">Empatía</span>
+                  <span class="emotion-tag confidence">Confianza</span>
+                </div>
+                <div class="session-duration">1h 30min</div>
+              </div>
+              <div class="specialist-notes">
+                <h1>Recomendaciones</h1>
+                <h4>Notas del especialista: Julio Vernabe </h4>
+                <p>Este resultado representa una fase de estabilización emocional. La emergencia de emociones prosociales sugiere una mayor conexión con el entorno y consigo mismo. Sin embargo, dado que las emociones pueden fluctuar, es fundamental no asumir que este estado es permanente. Aun así, este avance indica una buena receptividad al proceso, y permite al terapeuta explorar nuevas áreas de trabajo, como el fortalecimiento del autoconcepto o la elaboración de metas personales, con mayor seguridad.s</p>
+                <h4>Recomendaciones</h4>
+                <p>En esta evaluación se destacan emociones como la empatía, la calma y la confianza, lo que marca una tendencia favorable hacia el equilibrio emocional. El sistema indica que, de mantenerse estas emociones predominantes, se podrían consolidar estados más estables de bienestar. Se recomienda trabajar ahora en el fortalecimiento de vínculos sociales, rutinas positivas y habilidades de comunicación interpersonal.</p>
+            </div>
+              <div class="session-actions">
+                <button class="btn-details">Ver detalles</button>
+                <button class="btn-download">Descargar informe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="pagination">
+          <button class="pagination-btn prev">Anterior</button>
+          <div class="page-numbers">
+            <span class="page-number active">1</span>
+            <span class="page-number">2</span>
+            <span class="page-number">3</span>
+            <span class="page-number">...</span>
+            <span class="page-number">8</span>
+          </div>
+          <button class="pagination-btn next">Siguiente</button>
+        </div>
+      </section>
+
+      <!-- Pantalla de Recomendaciones -->
+      <section id="recomendaciones" class="dashboard-section active">
+        <div class="section-header">
+          <h2>Recomendaciones y Alertas</h2>
+          <p>Consejos personalizados basados en tus patrones emocionales.</p>
+        </div>
+        
+        <div class="rec-grid">
+          <div class="alerts-container">
+            <h3>Alertas Recientes</h3>
+            <div class="alert-item warning">
+              <div class="alert-icon"></div>
+              <div class="alert-content">
+                <h4>Alerta de Estado Critico </h4>
+                <p>Disminución simultánea de felicidad y relajación. Activación de intervenciones combinadas.</p>
+                <span class="alert-time">12/04/24</span>
+              </div>
+            </div>
+            <div class="alert-item info">
+              <div class="alert-icon"></div>
+              <div class="alert-content">
+                <h4>Alerta de Estado </h4>
+                <p>	Aumento significativo de relajación y reducción de ansiedad. Se retira la alerta de riesgo.</p>
+                <span class="alert-time">12/05/24</span>
+              </div>
+            </div>
+            <div class="alert-item success">
+              <div class="alert-icon"></div>
+              <div class="alert-content">
+                <h4>Objetivo Alcanzado</h4>
+                <p>¡Felicidades! Has completado tu objetivo de mantener la calma durante situaciones estresantes por 7 días consecutivos.</p>
+                <span class="alert-time">Hace 3 días</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="recommendations-container">
+            <h3>Recomendaciones Personalizadas </h3>
+            
+            <div class="rec-item">
+              <div class="rec-icon meditation"></div>
+              <div class="rec-content">
+                <h4>Meditación diaria (10 min)</h4>
+                <p>5-10 minutos de meditación , la meditación guiada reduce la hiperactividad del sistema nervioso simpático, responsable de la respuesta al estrés. Contribuye a entrenar la atención plena y reducir la rumiación ansiosa.</p>
+                <div class="rec-actions">
+                  <button class="btn-start-now">Comenzar ahora</button>
+                  <button class="btn-remind">Recordarme más tarde</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="rec-item">
+              <div class="rec-icon music"></div>
+              <div class="rec-content">
+                <h4>Musicoterapia</h4>
+                <p>Escuchar música instrumental o sonidos naturales antes de dormir puede mejorar tu calidad de sueño y reducir la ansiedad nocturna.</p>
+                <div class="rec-actions">
+                  <button class="btn-playlist">Ver playlist recomendada</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="rec-item">
+              <div class="rec-icon exercise"></div>
+              <div class="rec-content">
+                <h4>Actividad Física</h4>
+                <p>30 minutos de actividad física moderada como caminar o yoga pueden liberar endorfinas y mejorar tu estado de ánimo general.</p>
+                <div class="rec-actions">
+                  <button class="btn-exercises">Ver ejercicios sugeridos</button>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="custom-recommendations">
+            <h3>Plan de Acción Semanal</h3>
+            <div class="week-plan">
+              <div class="day-plan">
+                <div class="day-header">Lunes</div>
+                <div class="day-activities">
+                  <div class="activity">
+                    <span class="activity-time">08:00</span>
+                    <span class="activity-name">Meditación matutina</span>
+                  </div>
+                  <div class="activity">
+                    <span class="activity-time">19:00</span>
+                    <span class="activity-name">Ejercicio de respiración</span>
+                  </div>
+                </div>
+              </div>
+              <div class="day-plan">
+                <div class="day-header">Miércoles</div>
+                <div class="day-activities">
+                  <div class="activity">
+                    <span class="activity-time">12:00</span>
+                    <span class="activity-name">Pausa consciente</span>
+                  </div>
+                  <div class="activity">
+                    <span class="activity-time">18:00</span>
+                    <span class="activity-name">Caminata al aire libre</span>
+                  </div>
+                </div>
+              </div>
+              <div class="day-plan">
+                <div class="day-header">Viernes</div>
+                <div class="day-activities">
+                  <div class="activity">
+                    <span class="activity-time">17:00</span>
+                    <span class="activity-name">Evaluación semanal</span>
+                  </div>
+                  <div class="activity">
+                    <span class="activity-time">21:00</span>
+                    <span class="activity-name">Musicoterapia</span>
+                  </div>
+                </div>
+              </div>
+              <div class="day-plan">
+                <div class="day-header">Domingo</div>
+                <div class="day-activities">
+                  <div class="activity">
+                    <span class="activity-time">10:00</span>
+                    <span class="activity-name">Yoga suave</span>
+                  </div>
+                  <div class="activity">
+                    <span class="activity-time">20:00</span>
+                    <span class="activity-name">Visualización guiada</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      </section>
+    </main>
+  </div>
+  
+  <div class="toast hidden" id="toast">
+    <div class="toast-content">
+      <span class="toast-title">Notificación</span>
+      <span class="toast-message">Mensaje de notificación</span>
+    </div>
+  </div>
+  
+  <script src="../static/js/paciente.js"></script>
+</body>
+</html>
