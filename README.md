@@ -109,15 +109,15 @@ Abre tu navegador en: http://localhost:5000
 
 Nombre	Rol	Contacto
 
-Aaron Néstor Choque Condori	Backend Developer	vantas1412@gmail.com
+Aaron Néstor Choque Condori	Data Analyst vantas1412@gmail.com
 
 Joel Hernan Tancara Suñagua	Frontend Developer	tancarajoe@gmail.com
 
-Fidel Angel Rojas Condori	Data Analyst	rojascondorifidelangel@gmail.com
+Carlos Eduardo Reyes Barja	Backend Developer	kaereyes0@gmail.com
 
-Carlos Eduardo Reyes Barja	UI/UX Designer	kaereyes0@gmail.com
+Fidel Angel Rojas Condori	UI/UX Designer	rojascondorifidelangel@gmail.com
 
-Esther Sara Copa Quispe	Documentation	e.sara.cq.25@gmail.com
+Esther Sara Copa Quispe	UI/UX Designer	e.sara.cq.25@gmail.com
 
 🤝 Cómo Contribuir
 ¡Agradecemos las contribuciones! Para colaborar:
